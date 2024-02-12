@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>MyValentine</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="styles/ngeneral.css">
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .full-height {
+      height: 100%;
+    }
+
+    .yes-no-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+
+    }
+
+    .yes-image1 {
+      border: solid 1px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="full-height">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; height: 100%;">
+      <div style="background-color: lightblue;">
+        <div>
+          <img class="yes-image1" id="image" src="gif/cat.gif" />
+        </div>
+
+        <br><br>
+
+        <div>
+          <p><h1>Will you be my Valentine?</h1></p>
+        </div>
+
+        <br>
+
+        <div class="yes-no-button">
+          <button class="yes-button" id="clickme" onclick="changeYesImage();">YES!</button>
+          <button class="no-button"  id="noButton" onclick="changeNoImage();">NOO!</button>
+          <p id="displayText"></p>
+        </div>
+      </div>
+      <div style="background-color: lightpink;">
+        <div class="container">
+          <div class="envelope-wrapper">
+              <div class="envelope">
+                  <div class="letter">
+                      <div class="text">
+                          <strong>"My dearest Love,"</strong>
+                          <p>
+                              To my bibi, Ever since ni abot ka sakong life gi puno ug gi showeran jud ko nimo ug Love. I am so happy and contented 
+                              that I met a girl like you. Alam ko jud na ikaw najud akoa bibi and di talaga ako magsawa mag sabi sayo lagi nyan.
+                              I love you always my bibi. Happy Valentines! 🥰💘💘💘
+                          </p>
+                      </div>
+                  </div>
+              </div>
+              <div class="heart"></div>
+          </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var display = document.getElementById("displayText");
+    var count = 0; // Move the count variable outside of the function
+
+    function changeYesImage() {
+      var img = document.getElementById("image");
+      img.src = "gif/cat2.gif";
+    }
+
+    function changeNoImage() {
+      var img = document.getElementById("image");
+      var sadCatImages = [
+        "gif/sad-cat.gif",
+        "gif/sad-cat2.gif",
+        "gif/sad-cat3.gif",
+        "gif/sad-cat4.gif",
+        "gif/sad-cat5.gif",
+        "gif/sad-cat6.gif",
+        "gif/sad-cat7.gif",
+        "gif/sad-cat7.gif",
+        "gif/sad-cat9.gif"
+      ];
+
+      if (count < sadCatImages.length) {
+        img.src = sadCatImages[count];
+        updateText(count); // Call the function to update text
+        count++; // Increment the count variable
+      }
+    }
+
+    function updateText(count) {
+      var display = document.getElementById("displayText");
+
+      if (count === 0) {
+        display.textContent = "Sige tistinga jud!";
+      } else if (count === 1) {
+        display.textContent = "ahhhh mao na gi ckick jud!";
+      } else if (count === 2) {
+        display.textContent = "wala jud ka jud";
+      } else if (count === 3) {
+        display.textContent = "PLEASE! stop na ;(";
+      } else if (count === 4) {
+        display.textContent = "YES na lagiii";
+      } else if (count === 5) {
+        display.textContent = "...";
+      } else if (count === 6) {
+        display.textContent = "....";
+      } else if (count === 7) {
+        display.textContent = "....";
+      } else if (count === 8) {
+        display.textContent = "Muhilak jud ko hmmmp";
+      }
+    }
+
+    const envelope = document.querySelector('.envelope-wrapper');
+        envelope.addEventListener('click', () => {
+            envelope.classList.toggle('flap');
+        });
+
+  </script>
+
+</body>
+<footer></footer>
+</html>
